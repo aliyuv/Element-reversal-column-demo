@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>元素翻转</title>
+    <style>
+        .newList li{
+            width: 900px;
+            height: 80px;
+            border: 1px solid red;
+            text-align: center;
+            margin-bottom: 20px;
+            list-style: none;
+            line-height: 40px;
+            padding: 20px;
+        }
+        #btn{
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+<button id="btn">切换</button>
+     <ul class="newList">
+         <li> 1Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates et neque quae dignissimos illum corrupti cumque odio consectetur repellendus ad enim sit, quam maxime ea. Consequuntur ab qui dolorem ipsum!</li>
+         <li> 2Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates et neque quae dignissimos illum corrupti cumque odio consectetur repellendus ad enim sit, quam maxime ea. Consequuntur ab qui dolorem ipsum!</li>
+         <li> 3Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates et neque quae dignissimos illum corrupti cumque odio consectetur repellendus ad enim sit, quam maxime ea. Consequuntur ab qui dolorem ipsum!</li>
+         <li> 4Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates et neque quae dignissimos illum corrupti cumque odio consectetur repellendus ad enim sit, quam maxime ea. Consequuntur ab qui dolorem ipsum!</li>
+         <li> 5Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates et neque quae dignissimos illum corrupti cumque odio consectetur repellendus ad enim sit, quam maxime ea. Consequuntur ab qui dolorem ipsum!</li>
+         <li> 6Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates et neque quae dignissimos illum corrupti cumque odio consectetur repellendus ad enim sit, quam maxime ea. Consequuntur ab qui dolorem ipsum!</li>
+     </ul>
+    <script>
+        //获取button
+        const btn = document.querySelector('#btn');
+        //获取ul
+        const newlist = document.querySelector('.newList');
+        //获取li
+        let liNodes = document.querySelectorAll('.newList li')
+        btn.onclick = function (){
+            //创建容器
+            const newDom = document.createDocumentFragment();
+            for (let i = liNodes.length -1; i >=0; i--){
+                newDom.appendChild(liNodes[i]);
+            }
+            newlist.appendChild(newDom);
+        }
+    </script>
+</body>
+</html>
